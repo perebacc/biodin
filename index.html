@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cordados: Osmorregulação, Circulação e Ovo Amniótico</title>
+<style>
+:root{--bg:#fdf5f9;--card:#fff;--ink:#3a1c40;--mut:#7a5e80;--plum:#5b2a63;--rose:#d6457a;--rose-l:#fde4ee;--lil:#a48ad8;--lil-l:#efe8fb;--ok:#2e8b57;--bad:#c0392b;--line:#e8d6ea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:linear-gradient(135deg,var(--plum),#8a3f86 60%,var(--rose));color:#fff;padding:2.6rem 1.2rem 2.2rem;text-align:center}
+header small{letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-size:.78rem}
+header h1{font:700 clamp(1.7rem,5vw,2.6rem)/1.2 Georgia,serif;margin:.5rem 0 .6rem}
+header p{max-width:640px;margin:0 auto;opacity:.92}
+main{max-width:900px;margin:0 auto;padding:1.4rem 1rem 3rem}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 .9rem;box-shadow:0 2px 8px rgba(91,42,99,.06)}
+summary{cursor:pointer;list-style:none;padding:1rem 1.2rem;font:700 1.1rem Georgia,serif;color:var(--plum);display:flex;align-items:center;gap:.7rem}
+summary::-webkit-details-marker{display:none}
+summary .n{background:var(--rose);color:#fff;border-radius:50%;width:1.9rem;height:1.9rem;display:grid;place-items:center;font:700 .9rem system-ui;flex:none}
+summary::after{content:"+";margin-left:auto;color:var(--rose);font-size:1.5rem}
+details[open]>summary::after{content:"–"}
+details[open]>summary{border-bottom:1px solid var(--line)}
+.body{padding:1.1rem 1.2rem 1.3rem}
+h3{font:700 1.02rem Georgia,serif;color:var(--rose);margin:1.4rem 0 .5rem}
+h3:first-child{margin-top:0}
+p{margin:.5rem 0}
+.box{background:var(--lil-l);border-left:4px solid var(--lil);border-radius:8px;padding:.7rem 1rem;margin:.9rem 0}
+.box.warn{background:var(--rose-l);border-color:var(--rose)}
+table{width:100%;border-collapse:collapse;font-size:.88rem;display:block;overflow-x:auto}
+th,td{padding:.55rem .7rem;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--plum);color:#fff;white-space:nowrap}
+td:first-child{font-weight:700;color:var(--plum)}
+tr:nth-child(even) td{background:#fbf3fa}
+ul{padding-left:1.2rem;margin:.4rem 0}li{margin:.25rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:.8rem 0}
+.chip{border-radius:12px;padding:.8rem 1rem;font-size:.92rem;border:1px solid var(--line);background:#fffafd}
+.chip b.t{display:block;font:700 1rem Georgia,serif;color:var(--plum);margin-bottom:.3rem}
+.chip .tag{display:inline-block;background:var(--rose);color:#fff;border-radius:20px;padding:.05rem .6rem;font-size:.74rem;font-weight:700;margin-bottom:.4rem}
+.chip.b{background:#eaf3fb;border-color:#bcd7ee}.chip.g{background:#e7f6ee;border-color:#b9e2cb}.chip.y{background:#fff6dd;border-color:#f0dc9c}
+.fig{margin:1rem 0;text-align:center}
+.fig svg{width:100%;max-width:640px;height:auto}
+.fig svg text{font:600 16px system-ui,sans-serif;fill:#3a1c40}
+.fig svg .s{font-size:14px;font-weight:500;fill:#7a5e80}
+.fig figcaption{font-size:.82rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.8rem}
+.fc{perspective:900px;height:150px;cursor:pointer}
+.fc div{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.on div{transform:rotateY(180deg)}
+.fc span{position:absolute;inset:0;backface-visibility:hidden;display:grid;place-items:center;text-align:center;padding:.9rem;border-radius:12px;font-size:.93rem}
+.fc .a{background:linear-gradient(135deg,var(--plum),var(--rose));color:#fff;font-weight:600}
+.fc .b{background:var(--lil-l);border:2px solid var(--lil);transform:rotateY(180deg)}
+.q{border:1px solid var(--line);border-radius:12px;padding:1rem;margin:.8rem 0;background:#fffafd}
+.q p{font-weight:600}
+.q button{display:block;width:100%;text-align:left;margin:.35rem 0;padding:.6rem .8rem;border:1.5px solid var(--line);background:#fff;border-radius:9px;font:inherit;cursor:pointer;color:var(--ink)}
+.q button:hover:not(:disabled){border-color:var(--lil);background:var(--lil-l)}
+.q button.ok{background:#e3f5ea;border-color:var(--ok)}.q button.no{background:#fbe4e1;border-color:var(--bad)}
+.q .ex{display:none;font-size:.9rem;margin-top:.5rem;color:var(--mut)}
+.score{position:sticky;bottom:.6rem;background:var(--plum);color:#fff;padding:.7rem 1rem;border-radius:12px;text-align:center;font-weight:700}
+footer{text-align:center;color:var(--mut);font-size:.82rem;padding:1rem}
+</style>
+</head>
+<body>
+<header>
+<small>Biologia · Zoologia dos Cordados</small>
+<h1>Peixes, Anfíbios, Répteis e Aves</h1>
+<p>Osmorregulação, excreção, circulação, respiração cutânea e o ovo amniótico: os pontos que mais caem em prova.</p>
+</header>
+<main>
+
+<details open><summary><span class="n">1</span>Comparativo dos grupos</summary><div class="body">
+<table><tr><th>Grupo</th><th>Respiração</th><th>Coração e circulação</th><th>Excreta</th><th>Reprodução</th></tr>
+<tr><td>Peixes</td><td>Branquial (dipnoicos: também pulmonar)</td><td>Bicavitário (1 átrio + 1 ventrículo). Simples e completa</td><td>Amônia (ósseos); ureia (cartilaginosos)</td><td>Externa na maioria dos ósseos; interna nos cartilaginosos</td></tr>
+<tr><td>Anfíbios</td><td>Larva: branquial. Adulto: cutânea (principal) e pulmonar</td><td>Tricavitário (2 átrios + 1 ventrículo). Dupla e incompleta</td><td>Larva: amônia. Adulto: ureia</td><td>Fecundação externa; ovo sem casca, depende da água</td></tr>
+<tr><td>Répteis</td><td>Pulmonar</td><td>Tricavitário com septo parcial (crocodilianos: tetracavitário). Dupla e incompleta</td><td>Ácido úrico</td><td>Fecundação interna; ovo com casca</td></tr>
+<tr><td>Aves</td><td>Pulmões e sacos aéreos</td><td>Tetracavitário. Dupla e completa</td><td>Ácido úrico</td><td>Fecundação interna; ovo com casca</td></tr></table>
+<div class="box"><b>Grupos:</b> peixes (condrictes = cartilaginosos; osteíctes = ósseos), anfíbios (anuros, urodelos, ápodes), répteis (quelônios, crocodilianos, escamados), aves.</div>
+</div></details>
+
+<details><summary><span class="n">2</span>Controle osmótico nos peixes</summary><div class="body">
+<div class="box"><b>Regra base:</b> a água passa por osmose do meio <b>menos concentrado</b> (hipotônico) para o <b>mais concentrado</b> (hipertônico).</div>
+<div class="grid">
+<div class="chip b"><span class="tag">Ósseo de água doce</span><b class="t">Meio hipotônico</b>O peixe é mais concentrado que a água. A água <b>entra</b> e os sais <b>saem</b>.<ul><li>Urina <b>abundante e diluída</b></li><li>Absorve sais ativamente pelas brânquias</li><li>Quase não bebe água</li></ul></div>
+<div class="chip y"><span class="tag">Ósseo marinho</span><b class="t">Meio hipertônico</b>O mar é mais concentrado que o peixe. A água <b>sai</b> e os sais <b>entram</b>.<ul><li><b>Bebe água do mar</b></li><li>Elimina o excesso de sais ativamente pelas brânquias</li><li>Urina <b>escassa e concentrada</b></li></ul></div>
+<div class="chip g"><span class="tag">Cartilaginoso marinho</span><b class="t">Tubarões e raias</b>Retêm <b>ureia</b> no sangue e ficam com concentração igual ou pouco maior que a do mar, quase sem perder água.<ul><li>Sal em excesso sai pela glândula retal</li><li>Sem bexiga natatória</li></ul></div></div>
+<h3>Excreção nitrogenada</h3>
+<table><tr><th>Tipo</th><th>Excreta</th><th>Toxicidade</th><th>Água gasta</th><th>Quem</th></tr>
+<tr><td>Amoniotélico</td><td>Amônia</td><td>Muito tóxica</td><td>Muita (alta solubilidade)</td><td>Peixes ósseos, larvas de anfíbios</td></tr>
+<tr><td>Ureotélico</td><td>Ureia</td><td>Menos tóxica</td><td>Média</td><td>Cartilaginosos, anfíbios adultos, mamíferos</td></tr>
+<tr><td>Uricotélico</td><td>Ácido úrico</td><td>Pouco tóxico</td><td>Muito pouca (baixa solubilidade)</td><td>Répteis e aves</td></tr></table>
+</div></details>
+
+<details><summary><span class="n">3</span>Circulação: por que o coração do peixe só recebe sangue venoso</summary><div class="body">
+<figure class="fig"><svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circulação simples do peixe">
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d6457a"/></marker></defs>
+<rect x="15" y="40" width="130" height="60" rx="12" fill="#fde4ee" stroke="#d6457a" stroke-width="2"/><text x="80" y="76" text-anchor="middle">Coração</text>
+<rect x="255" y="40" width="130" height="60" rx="12" fill="#eaf3fb" stroke="#5b8fc7" stroke-width="2"/><text x="320" y="76" text-anchor="middle">Brânquias</text>
+<rect x="495" y="40" width="130" height="60" rx="12" fill="#e7f6ee" stroke="#2e8b57" stroke-width="2"/><text x="560" y="76" text-anchor="middle">Tecidos</text>
+<line x1="147" y1="70" x2="251" y2="70" stroke="#d6457a" stroke-width="3" marker-end="url(#ar)"/><text class="s" x="199" y="58" text-anchor="middle">venoso</text>
+<line x1="387" y1="70" x2="491" y2="70" stroke="#d6457a" stroke-width="3" marker-end="url(#ar)"/><text class="s" x="439" y="58" text-anchor="middle">arterial</text>
+<path d="M560 102V145H80V104" fill="none" stroke="#d6457a" stroke-width="3" marker-end="url(#ar)"/><text class="s" x="320" y="136" text-anchor="middle">venoso</text></svg>
+<figcaption>Circulação simples e completa: o sangue passa uma vez pelo coração a cada volta.</figcaption></figure>
+<ul><li>O coração (2 cavidades) bombeia <b>só sangue venoso</b> para as brânquias.</li><li>Nas brânquias o sangue é oxigenado e segue <b>direto aos tecidos</b>, sem voltar ao coração.</li><li><b>Completa</b> = não há mistura de sangue venoso e arterial.</li></ul>
+<div class="box warn"><b>Comparação:</b> nos anfíbios e na maioria dos répteis, o ventrículo único mistura os dois tipos de sangue (<b>incompleta</b>). Aves e mamíferos têm 4 cavidades e circulação <b>dupla e completa</b>.</div>
+</div></details>
+
+<details><summary><span class="n">4</span>Respiração cutânea dos anfíbios</summary><div class="body">
+<p>Os gases passam por <b>difusão</b> através da pele, que é o <b>principal mecanismo</b> respiratório dos anfíbios adultos (o pulmão é simples e pouco eficiente).</p>
+<ul><li>Pele <b>fina, nua e úmida</b>: o O₂ se dissolve na película de água.</li><li>Pele <b>muito vascularizada</b>, com capilares logo abaixo da superfície.</li><li>Sem escamas, penas ou pelos e sem queratina espessa.</li></ul>
+<div class="box"><b>Consequência:</b> vivem em ambientes úmidos ou perto da água e correm risco de desidratar. Já os répteis têm pele seca e queratinizada e <b>não</b> fazem respiração cutânea.</div>
+</div></details>
+
+<details><summary><span class="n">5</span>O ovo amniótico e a conquista do ambiente terrestre</summary><div class="body">
+<figure class="fig"><svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ovo amniótico">
+<ellipse cx="310" cy="170" rx="105" ry="145" fill="#fff5e6" stroke="#c9a56b" stroke-width="5"/>
+<ellipse cx="310" cy="170" rx="95" ry="130" fill="#fffdf7" stroke="#a48ad8" stroke-width="2" stroke-dasharray="6 4"/>
+<ellipse cx="385" cy="175" rx="20" ry="48" fill="#dbeeff" stroke="#5b8fc7" stroke-width="2"/>
+<circle cx="310" cy="245" r="42" fill="#ffe9a8" stroke="#d9a520" stroke-width="2"/>
+<ellipse cx="310" cy="120" rx="48" ry="42" fill="#efe8fb" stroke="#a48ad8" stroke-width="2"/>
+<circle cx="310" cy="120" r="20" fill="#d6457a"/>
+<g stroke="#5b2a63" stroke-width="1.5"><line x1="446" y1="60" x2="380" y2="62"/><line x1="446" y1="175" x2="407" y2="175"/><line x1="446" y1="255" x2="382" y2="255"/>
+<line x1="174" y1="100" x2="264" y2="112"/><line x1="174" y1="150" x2="292" y2="126"/><line x1="174" y1="245" x2="268" y2="245"/></g>
+<g><text x="452" y="66">Casca</text><text x="452" y="180">Alantoide</text><text x="452" y="260">Cório</text>
+<text x="168" y="98" text-anchor="end">Âmnio</text><text x="168" y="156" text-anchor="end">Embrião</text><text x="168" y="250" text-anchor="end">Saco vitelínico</text></g></svg>
+<figcaption>Esquema simplificado do ovo de réptil ou de ave.</figcaption></figure>
+<div class="grid">
+<div class="chip"><b class="t">Âmnio</b>Membrana que forma uma bolsa com <b>líquido amniótico</b> em volta do embrião. Ele fica em meio aquático, protegido de <b>choques mecânicos e ressecamento</b>.</div>
+<div class="chip y"><b class="t">Saco vitelínico</b>Guarda o <b>vitelo</b>, reserva de nutrientes que <b>alimenta</b> o embrião.</div>
+<div class="chip b"><b class="t">Alantoide</b>Armazena as <b>excretas</b> (ácido úrico) e participa das <b>trocas gasosas</b>.</div>
+<div class="chip g"><b class="t">Cório</b>Envolve todo o conteúdo e faz as <b>trocas gasosas</b> com o exterior.</div>
+<div class="chip"><b class="t">Casca</b>Protege contra <b>desidratação</b> e choques, e é porosa: permite a passagem de gases.</div></div>
+<div class="box warn"><b>O que foi a conquista definitiva do ambiente terrestre pelos répteis?</b><br>O <b>ovo com casca</b> (amniótico) e a <b>fecundação interna</b>. Juntos eliminaram a dependência da água para a reprodução: os gametas se encontram dentro da fêmea e o embrião se desenvolve em terra, com seu próprio meio aquático. Somam-se a isso a pele seca e queratinizada e a excreção de ácido úrico.</div>
+</div></details>
+
+<details><summary><span class="n">6</span>Flashcards (clique para virar)</summary><div class="body"><div class="cards" id="fc"></div></div></details>
+
+<details open><summary><span class="n">7</span>Quiz com correção imediata</summary><div class="body"><div id="quiz"></div><div class="score" id="score"></div></div></details>
+</main>
+<footer>Material de estudo · Biologia · Cordados</footer>
+
+<script>
+const FC=[["Peixe de água doce: hipo ou hipertônico ao meio?","Hipertônico ao meio. A água entra; ele faz urina abundante e diluída e absorve sais."],
+["Peixe ósseo marinho: como controla a osmose?","Bebe água do mar, elimina sais pelas brânquias e faz pouca urina concentrada."],
+["Por que a circulação do peixe é simples e completa?","O coração só recebe sangue venoso, que vai às brânquias e depois aos tecidos. Não há mistura."],
+["Por que a respiração cutânea exige pele úmida?","O O₂ precisa se dissolver na água para difundir pela pele fina e vascularizada."],
+["Função do âmnio","Manter o embrião em meio líquido, protegido de choques e desidratação."],
+["Função do saco vitelínico","Reserva de vitelo: nutre o embrião."],
+["Função do alantoide","Armazenar excretas (ácido úrico) e auxiliar nas trocas gasosas."],
+["Conquista definitiva do ambiente terrestre pelos répteis","Ovo com casca (amniótico) e fecundação interna."]];
+document.getElementById("fc").innerHTML=FC.map(c=>`<div class="fc" onclick="this.classList.toggle('on')"><div><span class="a">${c[0]}</span><span class="b">${c[1]}</span></div></div>`).join("");
+const Q=[
+["Um peixe ósseo de água doce mantém o equilíbrio osmótico:",["Bebendo muita água","Fazendo urina abundante e diluída e absorvendo sais pelas brânquias","Eliminando sal pela glândula retal","Retendo ureia no sangue"],1,"O meio é hipotônico: entra água por osmose. Ele elimina o excesso na urina diluída e repõe sais pelas brânquias."],
+["Um peixe ósseo marinho compensa a perda de água:",["Bebendo água do mar e excretando sais pelas brânquias","Absorvendo água pela pele","Produzindo urina abundante","Deixando de excretar amônia"],0,"O mar é hipertônico: o peixe perde água. Ele bebe água do mar e elimina o sal ativamente pelas brânquias."],
+["A circulação dos peixes é simples e completa porque:",["O coração tem 4 cavidades","O sangue arterial e o venoso se misturam","O coração recebe só sangue venoso, que passa uma vez por ele por volta","O sangue passa duas vezes pelo coração"],2,"O sangue venoso vai do coração às brânquias e segue oxigenado aos tecidos, sem voltar ao coração."],
+["Qual característica permite a respiração cutânea?",["Pele com escamas","Pele fina, úmida e muito vascularizada","Pele queratinizada","Pele com penas"],1,"Os gases se dissolvem na película de água e difundem para os capilares."],
+["A função do âmnio no ovo com casca é:",["Nutrir o embrião","Armazenar ácido úrico","Manter o embrião em meio líquido, protegendo de choques e ressecamento","Fazer trocas gasosas"],2,"O líquido amniótico é o ambiente aquático do embrião dentro do ovo."],
+["O saco vitelínico tem a função de:",["Reservar nutrientes para o embrião","Armazenar excretas","Proteger contra choques","Fazer a fecundação"],0,"O vitelo é a reserva alimentar do embrião."],
+["A conquista definitiva do ambiente terrestre pelos répteis foi:",["Pele úmida e respiração cutânea","Ovo com casca e fecundação interna","Larvas aquáticas","Circulação simples"],1,"Os dois juntos acabam com a dependência da água para reproduzir."]];
+let pts=0,done=0;const qz=document.getElementById("quiz"),sc=document.getElementById("score");
+sc.textContent="Acertos: 0 / "+Q.length;
+Q.forEach((q,i)=>{const d=document.createElement("div");d.className="q";
+  d.innerHTML=`<p>${i+1}. ${q[0]}</p>`+q[1].map((o,j)=>`<button data-j="${j}">${"ABCD"[j]}) ${o}</button>`).join("")+`<div class="ex"></div>`;
+  d.querySelectorAll("button").forEach(b=>b.onclick=()=>{const j=+b.dataset.j,bs=d.querySelectorAll("button");
+    bs.forEach(x=>x.disabled=true);bs[q[2]].classList.add("ok");
+    if(j===q[2])pts++;else b.classList.add("no");
+    const ex=d.querySelector(".ex");ex.style.display="block";ex.textContent=(j===q[2]?"Correto! ":"Incorreto. ")+q[3];
+    done++;sc.textContent="Acertos: "+pts+" / "+Q.length+(done===Q.length?" · Fim!":"");});
+  qz.appendChild(d)});
+</script>
+</body>
+</html>
